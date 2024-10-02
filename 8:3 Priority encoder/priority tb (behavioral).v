@@ -5,7 +5,7 @@ module priority_tb;
     priority_encoder pren(d,y);
     
     initial begin 
-        $display("d=%0b --> y=%0b",d,y);
+        $monitor("d=%0b --> y=%0b",d,y);
         repeat(5) begin
             d=$random;#1;
         end
