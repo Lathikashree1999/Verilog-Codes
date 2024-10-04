@@ -1,0 +1,23 @@
+module test;
+  reg a,b;
+  reg clock;
+  initial begin
+    a=1;
+    #1 b=2;
+    $display($time,"val0 a=%d,b=%d",a,b);
+  end
+  always @ (posedge clock) begin
+	a<=b;
+    $display("Value1 a=%d",a);
+  end
+  
+  always @ (posedge clock) begin
+	b<=a;
+    $display("Value2 b=%d",b);
+  end
+  
+  initial begin
+    $display($time," a=%d,b=%d",a,b);
+  end
+    
+endmodule
