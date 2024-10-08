@@ -1,4 +1,4 @@
-module tb;
+module tb_asyn_counter;
   reg clk, rst_n;
   reg j, k;
   reg up;
