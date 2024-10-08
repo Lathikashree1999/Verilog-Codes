@@ -1,23 +1,10 @@
-module dff(
-  input clk, rst,
-  input d,
-  output reg q
-);
-  always@(posedge clk) begin
-    if(rst)
-    	q<=0;
-    else
-    	q<=q;
-  end
-endmodule
+ module eg(input x1,x2,x3,clk,output reg g,f);
+   reg d1,d2;
+   always@(posedge clk) begin
+                   d1 <= x1 & x2;
+                      g <= d1;
 
-module rtl(
-  input x1,x2,x3,
-  output g,f
-);
-  wire d1,d2;
-  assign d2 = x1&x2;
-  dff df1(.d(d1),.q(f));
-  assign d1=x3&f;
-  dff df0(.d(d2),.q(g));
-endmodule
+                   d2 <= f  |  x3;
+                       f<=d2;
+   end
+ endmodule
