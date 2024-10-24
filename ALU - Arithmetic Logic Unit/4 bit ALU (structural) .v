@@ -3,19 +3,14 @@ module alu_4bit (output [3:0] result, output carry_out, input [3:0] A, B, input 
   wire [3:0] sum, diff, and_op, or_op;
   wire cout_add, cout_sub;
 
-  // 4-bit adder for addition
   ripple_carry_adder adder (.sum(sum), .cout(cout_add), .A(A), .B(B), .cin(1'b0));
   
-  // 4-bit subtractor for subtraction (A - B)
   ripple_carry_adder subtractor (.sum(diff), .cout(cout_sub), .A(A), .B(~B), .cin(1'b1));
   
-  // AND operation
   assign and_op = A & B;
   
-  // OR operation
   assign or_op = A | B;
 
-  // Select the operation based on sel
   assign {carry_out, result} = (sel == 2'b00) ? {cout_add, sum} :
                                (sel == 2'b01) ? {cout_sub, diff} :
                                (sel == 2'b10) ? {1'b0, and_op} :
