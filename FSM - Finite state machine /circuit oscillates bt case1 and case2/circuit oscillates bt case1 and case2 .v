@@ -1,3 +1,7 @@
+/* Given the conditions, such that If A = 0, the circuit oscillates between either one
+of the two cases. Case 1: 00-01-00-01... and Case 2: 10-11-10-11... And If A =
+1, it switches inter between two cases. write Verilog code */
+
 module cir_oscl(input clk,rst,A, output reg y);
   parameter s0 = 4'h0;
   parameter s1 = 4'h1;
