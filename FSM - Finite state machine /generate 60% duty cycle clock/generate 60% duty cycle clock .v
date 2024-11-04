@@ -11,10 +11,10 @@ module duty_cycle_clk_60(input in_clk, rst, output reg out_clk);
       counter <= counter+1;
       if(counter<6)
         out_clk <= 1;
-      else if(counter<10)
+      else 
         out_clk <= 0;
-      else
-        out_clk <= 0;
+      if (counter==9)
+        counter <= 0;
     end
   end
 endmodule
