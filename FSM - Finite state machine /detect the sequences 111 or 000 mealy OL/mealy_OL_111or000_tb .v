@@ -5,34 +5,36 @@ module mealy_OL_111or000_tb;
   
   mealy_OL_111or000 mealy(clk,rst,x,y);
  
-  always #2 clk=~clk;
+  initial begin
+    clk=0;
+    forever #2 clk=~clk;
+  end
   
   initial begin
-     clk=0;
      x=0;
-     rst=0;
+    #1 rst=0;
     
     #2 rst=1;
     
     #3 x=1;
-    #3 x=0;
-    #3 x=0;
-    #3 x=0;
-    #3 x=1;
-    #3 x=0;
-    #3 x=1;
-    #3 x=1;
-    #3 x=1;
-    #3 x=0;
-    #3 x=1;
-    #3 x=1;
-    #3 x=1;
-    #3 x=1;
-    #3 x=0;
-    #3 x=0;
-    #3 x=0;
-    #3 x=0;
-    #50 $finish;
+    #4 x=0;
+    #4 x=0;
+    #4 x=0;
+    #4 x=1;
+    #4 x=0;
+    #4 x=1;
+    #4 x=1;
+    #4 x=1;
+    #4 x=0;
+    #4 x=1;
+    #4 x=1;
+    #4 x=1;
+    #4 x=1;
+    #4 x=0;
+    #4 x=0;
+    #4 x=0;
+    #4 x=0;
+    #10 $finish;
   end
   
   initial begin
