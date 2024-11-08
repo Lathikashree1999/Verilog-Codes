@@ -1,5 +1,6 @@
 module even_odd_fsm_tb;
-    reg clk, rst, in;
+    reg clk, rst
+    reg [1:0] in;
     wire [1:0] out;
   
     even_odd evenout(clk, rst, in, out);
