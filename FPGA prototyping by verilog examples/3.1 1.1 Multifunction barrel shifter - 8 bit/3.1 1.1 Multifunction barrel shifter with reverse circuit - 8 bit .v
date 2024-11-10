@@ -1,4 +1,4 @@
-module rotate_right(input [7:0]a, [2:0]amt, output reg [7:0]y);    //rotating direction : right
+module rotate_right(input [7:0]a, [2:0]amt, output reg [7:0]y);     //rotating direction : right
   always@(*) begin
     case(amt)
       3'b000 : y = a;
