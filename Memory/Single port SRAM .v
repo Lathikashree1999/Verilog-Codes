@@ -1,4 +1,4 @@
-module sync_ram(input clk,reset, write, read,input reg[4:0] data_in,input     reg[6:0]address, output reg[4:0] data_out);
+module sync_ram(input clk,reset, write, read, input [4:0] data_in, input[6:0]address, output reg[4:0] data_out);
   reg[4:0]ram[128:0];
   always @(posedge clk)begin
     if(reset)
