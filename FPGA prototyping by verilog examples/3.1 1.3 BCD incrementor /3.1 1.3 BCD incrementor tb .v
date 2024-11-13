@@ -6,7 +6,7 @@ module tb;
     
     initial begin
         $monitor("At time %t : Input: %b, Output: %b", $time, bcd_in, bcd_out);
-        bcd_in = 12'b0000_0010_0101;//25 incremented to 26
+        bcd_in = 12'b0000_0010_0101;//37 incremented to 38
         #10;
         bcd_in = 12'b0000_0001_0000;//10 incremented to 11
         #10;
@@ -19,5 +19,11 @@ module tb;
         bcd_in = 12'b1001_1001_1001;//999 incremented to 000(overflow)
         #10;
         $finish;
-    end   
+    end
+  
+  initial begin
+    $dumpfile("waves.vcd");
+    $dumpvars;
+  end
 endmodule
+
