@@ -1,7 +1,7 @@
 module sfifo_tb;
   reg clk,reset,write_enable,read_enable;
   reg [7:0]data_in;
-  reg [2:0]write_ptr,read_ptr;
+  reg [3:0]write_ptr,read_ptr;
   reg [7:0]fifo[7:0];
   wire [7:0]data_out;
   wire full,empty;
@@ -39,8 +39,9 @@ module sfifo_tb;
     #10
     data_in = 8'b00001010;
     #10
-    //data_in = 8'b00010111;
-   // #10
+    data_in = 8'b00010111;
+    #10
+    
     
     read_enable = 1;
     write_enable = 0;
